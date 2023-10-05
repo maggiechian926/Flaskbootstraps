@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+
+<style>
+.main {
+    background-color: #ffc107
+}
+</style>
+
+ <title>{% block title  %}{% endblock  %}</title>
+</head>
+<body>
+ <!--導覽列-->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">首頁 </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">貓狗</a>
+              <a class="nav-link" href="{{url_for('description')}}">住宿</a>
+              <a class="nav-link" href="{{url_for('product')}}">寵物食品</a>
+             <a class="nav-link" href="{{url_for('feature')}}">安親</a>
+          </div>
+      </div>
+  </div>
+</nav>
+<!--導覽列-->
+<div class="container main">
+    {% block content  %}
+    {%  endblock %}
+
+</div>
+
+<script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+</body>
+</html>
